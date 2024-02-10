@@ -1,0 +1,269 @@
+{{ define "main" }}
+
+{{/*  {{ partial "title" . }}  */}}
+<div class="single-book" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/Book"
+    style="height: auto !important;">
+    <div class="blog-admin pid-806152903" style="position: fixed; bottom: 20px; right: 20px;">
+        <div class="d-flex flex-column">
+            <a class="btn-share btn-facebook my-2" href="https://www.blogger.com/blog/posts/8468469339456174942"
+                target="_blank" title="Dashboard - All Posts"><i
+                    class="ai-icon bi bi-speedometer pe-2"></i>Dashboard</a>
+            <a class="btn-share btn-twitter my-2"
+                href="https://www.blogger.com/blog/post/edit/8468469339456174942/7743035629867282138" target="_blank"
+                title="Edit post"><i class="ai-icon bi bi-pencil-square pe-2"></i>Edit Post</a>
+        </div>
+    </div>
+    <div class="bg-faded-info py-5">
+        <div class="py-5 container">
+            <h3 class="mt-4 mb-1 text-body fw-light book_authors" id="SingleBookAuthor" itemprop="author">
+                <!--Can't find substitution for tag [postLabelsLabel]-->@NCTB</h3>
+            <h1 class="mb-3 book_name" id="SingleBookName" itemprop="name">আমার বাংলা বই <br> প্রথম শ্রেণি <br> ২০০২ -
+                ২০১১ শিক্ষাবর্ষ</h1>
+            <div class="share-this-post">
+                <label class="form-label d-inline-block align-middle my-2 me-3">শেয়ার:</label>
+                <a class="btn-share btn-facebook my-2"
+                    href="https://www.facebook.com/sharer.php?u=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                    rel="nofollow noopener noreferrer" target="_blank" title="Facebook Share"><i
+                        class="bi bi-facebook"></i>ফেসবুক</a>
+                <a class="btn-share btn-twitter me-2 my-2"
+                    href="https://twitter.com/intent/tweet?url=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                    rel="nofollow noopener noreferrer" target="_blank" title="Tweet This"><i
+                        class="bi bi-twitter"></i>টুইটার</a>
+                <a class="btn-share btn-instagram me-2" data-bs-target="#ShareThisBook" data-bs-toggle="modal"
+                    type="button"><i class="bi bi-three-dots"></i> আরও</a>
+                <div aria-labelledby="ShareThisBookLabel" aria-modal="true" class="modal fade" id="ShareThisBook"
+                    role="dialog" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered section" id="b-section-modal" name="modal Section">
+                        <div class="widget ContactForm" data-version="2" id="ContactForm1">
+                            <div class="modal-content">
+                                <div class="modal-header border-bottom-0">
+                                    <h4 class="modal-title">শেয়ার করুন</h4>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                        type="button"></button>
+                                </div>
+                                <div class="modal-body d-flex flex-column align-items-center">
+                                    <div class="d-flex fs-5">
+                                        <a class="share-button"
+                                            href="https://pinterest.com/pin/create/button/?url=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html&amp;media=https://lh3-testonly.googleusercontent.com/blogger_img_proxy/AJ0KDdUQQC3W_TucKG_NZIFW2HPYirGavqaaVrBv_xCLU2GAzdPg9GyMHKoNe_NxOKKlEZqKgraO5dhPUONd7lxHCFWu0dTRn0Jt7iskz7rfwZP7_Aw2aswshWALPNqp25tW07PsAvHTyzyzpTeqbRS5DRNAZtH2v2KjrT96TvZvwJM9XvGBdIEgUX9Ilf9Kwc5PvuMtdy1Ze9E35kaKOA"
+                                            rel="nofollow noopener noreferrer" target="_blank" title="Pin It"><i
+                                                class="bi bi-pinterest"></i></a>
+                                        <a class="ms-4 share-button"
+                                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                                            rel="nofollow noopener noreferrer" target="_blank" title="Linkedin Share"><i
+                                                class="bi bi-linkedin"></i></a>
+                                        <a class="ms-4 share-button"
+                                            href="https://wa.me/?text=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                                            rel="nofollow noopener noreferrer" target="_blank"
+                                            title="Share to whatsapp"><i class="bi bi-whatsapp"></i></a>
+                                        <a class="ms-4 share-button"
+                                            href="https://t.me/share/url?url=https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                                            rel="nofollow noopener noreferrer" target="_blank"
+                                            title="Share to telegram"><i class="bi bi-telegram"></i></a>
+                                    </div>
+                                    <div id="shareQR"><img
+                                            src="https://chart.apis.google.com/chart?cht=qr&amp;chs=230x230&amp;choe=UTF-8&amp;chl=null"
+                                            alt="QR code"></div>
+                                    <script
+                                        src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Creating-QR-Codes-On-Your-Website-ClassyQR/js/jquery.classyqr.js"></script>
+                                    <script>
+                                        $("#shareQR").ClassyQR({
+                                            create: true,
+                                            type: 'url',
+                                            text: "https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                                        });
+                                    </script>
+                                    <div class="mt-5 form-group">
+                                        <label class="form-label" for="url">ইউআরএল</label>
+                                        <input class="form-control shadow-none" disabled="true" name="url" size="60"
+                                            type="text"
+                                            value="https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="url">শিরোনাম</label>
+                                        <input class="form-control shadow-none" disabled="true" name="share-title"
+                                            size="60" type="text"
+                                            value="আমার বাংলা বই | প্রথম শ্রেণি | ২০০২ - ২০১১ শিক্ষাবর্ষ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="height: auto !important;">
+        <div class="bg-light shadow-lg rounded-3" style="margin-top: -4.875rem;">
+            <div class="my-3 p-4 border-bottom" role="tablist">
+
+                ‣ <a href="https://zerodemy-books-bengali.blogspot.com/search/label/%40NCTB"><span
+                        class="at-author">@</span>NCTB
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%A6">২০১০
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%8F%E0%A6%A8%E0%A6%B8%E0%A6%BF%E0%A6%9F%E0%A6%BF%E0%A6%AC%E0%A6%BF">এনসিটিবি
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A6%BE%E0%A6%A0%E0%A7%8D%E0%A6%AF%E0%A6%AA%E0%A7%81%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%95">পাঠ্যপুস্তক
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A5%E0%A6%AE">প্রথম
+                </a>
+            </div>
+            <div class="px-4 pt-lg-3 pb-3 mb-5">
+                <div class="tab-content px-lg-3">
+                    <div class="row">
+                        <div class="post-body col-lg-7 pe-lg-0">
+                            <img alt="" border="0" data-original-height="800" data-original-width="610"
+                                src="https://raw.githubusercontent.com/aishikrehman/git/main/zerodemy/images/books/Amar%20Bangla%20Boi%20Class%201%202010.png">
+                            <div><br></div>
+                            <div>
+                                <div>প্রাথমিক শিক্ষার গুণগত মান উন্নয়নের লক্ষ্যে ১৯৯২ সালে বাংলাদেশে প্রাথমিক
+                                    শিক্ষাস্তরে যোগ্যতাভিত্তিক শিক্ষাক্রম প্রবর্তন করা হয়। ২০০২ সাল পর্যন্ত প্রায় এক
+                                    যুগ ধরে এই শিক্ষাক্রমের আলোকে প্রণীত পঠন- পাঠন সামগ্রী ব্যবহৃত হয়ে আসছিল। ২০০১-২০০২
+                                    সালে প্রাথমিক স্তরের শিক্ষার লক্ষ্য ও উদ্দেশ্য, প্রান্তিক যোগ্যতা এবং প্রথম ও
+                                    দ্বিতীয় শ্রেণীর জন্য বিষয়ভিত্তিক অর্জন উপযোগী যোগ্যতা পরিমার্জন ও পুনর্নির্ধারণ
+                                    করা হয়। এরই ভিত্তিতে ঐ শ্রেণীর সকল বিষয়ের নতুন পঠন-পাঠন সামগ্রী প্রণয়ন করা হয়।
+                                </div>
+                                <div>বাংলা বিষয়ের জন্য চিহ্নিত শ্রেণীভিত্তিক অর্জন উপযোগী যোগ্যতার ভিত্তিতে প্রথম
+                                    শ্রেণীর জন্য নতুন বাংলা পাঠ্যপুস্তক ‘আমার বাংলা বই' (প্রথম ভাগ) রচিত হয়। অতঃপর একটি
+                                    কর্মশালা অনুষ্ঠানের মাধ্যমে শ্রেণী শিক্ষক, শিক্ষক প্রশিক্ষক, বিষয় বিশেষজ্ঞ ও
+                                    শিক্ষাক্রম বিশেষজ্ঞদের সহায়তায় বইটির যৌক্তিক মূল্যায়ন সম্পন্ন করা হয়।</div>
+                                <div>প্রাথমিক স্তরে শিক্ষার বাহন মাতৃভাষা বাংলা। বাংলা আমাদের রাষ্ট্রভাষা। সে জন্য বাংলা
+                                    ভাষায় দক্ষতা অর্জন শিক্ষার্থীদের একান্ত প্রয়োজন। বাংলা একদিকে যেমন শিক্ষার বিষয়
+                                    তেমনি প্রাথমিক স্তরের অন্যান্য বিষয় শেখারও অপরিহার্য মাধ্যম। বাংলা ভাষার এ দু'ধরনের
+                                    গুরুত্বের কথা বিবেচনা করে এবং শোনা, বলা, পড়া ও লেখা— ভাষা শেখার এ চারটি দক্ষতা যেন
+                                    শিক্ষার্থীরা অর্জন করতে পারে, সেদিকে দৃষ্টি রেখেই আমার বাংলা বই-এর পাঠ—উপকরণ নির্মাণ
+                                    করা হয়েছে।</div>
+                                <div>২০০২ সালে পরিমার্জিত শিক্ষাক্রমের আলোকে প্রণীত প্রথম শ্রেণীর বাংলা বইটি
+                                    শিক্ষার্থীদের হাতে পৌঁছানোর পর থেকেই এ দেশের সুশীল সমাজ, বিশিষ্ট শিক্ষকবৃন্দ,
+                                    শিক্ষাবিদ, শিক্ষা গবেষণায় সংশ্লিষ্ট বিভিন্ন বেসরকারি প্রতিষ্ঠান এবং গণ-মাধ্যমের
+                                    পক্ষ থেকে বইটিকে আরো আকর্ষণীয়, সহজপাঠ্য এবং শিশুতোষ করার জন্য অনুরোধ করা হয়।
+                                    প্রাথমিক ও গণশিক্ষা মন্ত্রণালয়, প্রাথমিক শিক্ষা অধিদপ্তর এবং জাতীয় শিক্ষাক্রম ও
+                                    পাঠ্যপুস্তক বোর্ড বিষয়টি অত্যন্ত গুরুত্ব সহকারে বিবেচনা করে। ফলে ২০০৯ শিক্ষাবর্ষ
+                                    হতে প্রথম শ্রেণীর শিক্ষার্থীদের হাতে নতুন আকর্ষণীয় বাংলা বই পৌঁছে দেওয়ার লক্ষ্যে
+                                    দেশের স্বনামধন্য শিক্ষাবিদ ও কথা-সাহিত্যিকদের সহায়তায় বইটি প্রয়োজনীয় সংশোধন ও
+                                    পরিমার্জন করা হয়।</div>
+                                <div>আমরা জানি, শিক্ষাক্রম উন্নয়ন একটি ধারাবাহিক প্রক্রিয়া এবং এর ভিত্তিতে পাঠ্যপুস্তক
+                                    রচিত হয়। কাজেই পাঠ্যপুস্তকের আরো উন্নয়নের জন্য যেকোনো গঠনমূলসক ও যুক্তিসঙ্গত
+                                    পরামর্শ গুরুত্বের সাথে বিবেচিত হবে। ২০২১ সালে স্বাধীনতার সুবর্ণ জয়ন্তীতে প্রত্যাশিত
+                                    সমৃদ্ধ বাংলাদেশ গড়ে তোলার নিরন্তর প্রচেষ্টার সঙ্গী হিসেবে শিক্ষার্থীদের সুষ্ঠু
+                                    বিকাশে বর্তমান সংস্করণে মুক্তিযুদ্ধের প্রকৃত ইতিহাস ও চেতনা প্রতিস্থাপিত হয়েছে। অতি
+                                    অল্প সময়ের মধ্যে পরিমার্জিত পাঠ্যপুস্তকগুলো প্রকাশ করতে গিয়ে কিছু ত্রুটি বিচ্যুতি
+                                    থেকে যেতে পারে। পরবর্তী সংস্করণে পাঠ্যপুস্তকগুলো আরো সুন্দর, শোভন ও ত্রুটিমুক্ত করার
+                                    চেষ্টা অব্যাহত থাকবে।</div>
+                                <div>এ বই রচনা, সম্পাদনা এবং পরবর্তীতে সংশোধন ও পরিমার্জনসহ মুদ্রণ ও প্রকাশনার বিভিন্ন
+                                    পর্যায়ে যাঁরা সহায়তা করেছেন, তাঁদের জানাই আন্তরিক কৃতজ্ঞতা ও ধন্যবাদ। যেসব কোমলমতি
+                                    শিশুদের জন্য বইটি রচিত ও পরিমার্জিত হল, তারা উপকৃত হলেই আমাদের সকল প্রয়াস সফল হবে
+                                    বলে আমি মনে করি।</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 pt-4 pt-lg-0">
+                            <div class="product-details ms-auto pb-3">
+                                <h3 class="h6">সাধারণ তথ্য</h3>
+                                <ul class="list-unstyled fs-sm pb-2">
+                                    <li class="inf-item"><span class="text-muted">শিরোনাম:</span>
+                                        <span class="inf-title">আমার বাংলা বই | প্রথম শ্রেণি | ২০০২ - ২০১১
+                                            শিক্ষাবর্ষ</span>
+                                    </li>
+                                </ul>
+                                <div id="infobox"></div>
+                                <div class="iframe-container" data-metype-account-id="1002958"
+                                    data-metype-bg-color="#ffffff" data-metype-font-color="#4a4a4a"
+                                    data-metype-host="https://www.metype.com/" data-metype-primary-color="#0000ff"
+                                    id="metype-container"
+                                    data-metype-page-url="https://zerodemy-books-bengali.blogspot.com/2023/01/class-1-amar-bangla-boi-curriculum-2010-nctb.html"
+                                    data-metype-window-height="955" data-metype-screen-width="1920"><span>To display
+                                        this widget, please be sure to add https://zerodemy-books-bengali.blogspot.com
+                                        in 'Allow Multiple Domains' under Metype.com/admin --&gt; Settings and hit
+                                        'Save'.</span></div>
+                                <script type="text/javascript">
+                                    var metypeContainer = document.getElementById("metype-container"),
+                                        page_url = metypeContainer.getAttribute("data-metype-page-url");
+                                    metypeContainer.setAttribute('data-metype-page-url', page_url || window.location.href);
+                                    metypeContainer.setAttribute('data-metype-window-height', window.innerHeight);
+                                    metypeContainer.setAttribute('data-metype-screen-width', window.screen.width);
+                                    talktype(function () {
+                                        talktype.commentWidgetIframe(metypeContainer);
+                                    });
+                                </script>
+                                <ins class="adsbygoogle" data-ad-client="ca-pub-2615630465075364"
+                                    data-ad-format="autorelaxed" data-ad-slot="1027485522"
+                                    style="display: block; height: 1431px;" data-adsbygoogle-status="done"
+                                    data-ad-status="unfilled">
+                                    <div id="aswift_1_host" tabindex="0" title="Advertisement"
+                                        aria-label="Advertisement"
+                                        style="border: none; height: 1431px; width: 416px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
+                                        <iframe id="aswift_1" name="aswift_1"
+                                            style="left:0;position:absolute;top:0;border:0;width:416px;height:1431px;"
+                                            sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                            width="416" height="1431" frameborder="0" marginwidth="0" marginheight="0"
+                                            vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+                                            src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2615630465075364&amp;output=html&amp;h=1431&amp;slotname=1027485522&amp;adk=223778451&amp;adf=3919956883&amp;pi=t.ma~as.1027485522&amp;w=416&amp;cr_col=1&amp;cr_row=13&amp;fwrn=2&amp;lmt=1701745511&amp;rafmt=9&amp;format=416x1431&amp;url=https%3A%2F%2Fzerodemy-books-bengali.blogspot.com%2F2023%2F01%2Fclass-1-amar-bangla-boi-curriculum-2010-nctb.html&amp;host=ca-host-pub-1556223355139109&amp;crui=image_sidebyside&amp;fwr=0&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIxLjAuNjE2Ny4xNjEiLG51bGwsMCxudWxsLCI2NCIsW1siTm90IEEoQnJhbmQiLCI5OS4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjEyMS4wLjYxNjcuMTYxIl0sWyJDaHJvbWl1bSIsIjEyMS4wLjYxNjcuMTYxIl1dLDBd&amp;dt=1707557267040&amp;bpp=13&amp;bdt=612&amp;idt=13&amp;shv=r20240207&amp;mjsv=m202402010101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=2542647508657&amp;frm=20&amp;pv=1&amp;ga_vid=1700245910.1707557267&amp;ga_sid=1707557267&amp;ga_hid=1865524305&amp;ga_fc=0&amp;u_tz=360&amp;u_his=7&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=4&amp;adx=833&amp;ady=715&amp;biw=1348&amp;bih=955&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C44808397%2C31079964%2C31080650%2C44798934%2C95322745%2C95324580%2C31080932%2C95321958%2C95324154%2C95324161%2C95324262&amp;oid=2&amp;pvsid=4283359458820356&amp;tmod=495395500&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fzerodemy-books-bengali.blogspot.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1032%2C1365%2C955&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.41&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=21"
+                                            data-google-container-id="a!2" data-load-complete="true"></iframe></div>
+                                </ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                                <div class="mb-3 d-flex align-items-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div id="related-posts">
+                <!--Can't find substitution for tag [postLabelsLabel]-->@NCTB
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <ins class="adsbygoogle" data-ad-client="ca-pub-2615630465075364" data-ad-format="auto"
+                data-ad-slot="3957916524" data-full-width-responsive="true" style="display: block; height: 280px;"
+                data-adsbygoogle-status="done" data-ad-status="unfilled">
+                <div id="aswift_2_host"
+                    style="border: none; height: 280px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"
+                    tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2"
+                        style="left:0;position:absolute;top:0;border:0;width:1200px;height:280px;"
+                        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                        width="1200" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0"
+                        allowtransparency="true" scrolling="no"
+                        src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2615630465075364&amp;output=html&amp;h=280&amp;slotname=3957916524&amp;adk=2032590762&amp;adf=2857036664&amp;pi=t.ma~as.3957916524&amp;w=1200&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1701745511&amp;rafmt=1&amp;format=1200x280&amp;url=https%3A%2F%2Fzerodemy-books-bengali.blogspot.com%2F2023%2F01%2Fclass-1-amar-bangla-boi-curriculum-2010-nctb.html&amp;host=ca-host-pub-1556223355139109&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTIxLjAuNjE2Ny4xNjEiLG51bGwsMCxudWxsLCI2NCIsW1siTm90IEEoQnJhbmQiLCI5OS4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjEyMS4wLjYxNjcuMTYxIl0sWyJDaHJvbWl1bSIsIjEyMS4wLjYxNjcuMTYxIl1dLDBd&amp;dt=1707557267079&amp;bpp=1&amp;bdt=651&amp;idt=1&amp;shv=r20240207&amp;mjsv=m202402010101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0%2C416x1431&amp;nras=1&amp;correlator=2542647508657&amp;frm=20&amp;pv=1&amp;ga_vid=1700245910.1707557267&amp;ga_sid=1707557267&amp;ga_hid=1865524305&amp;ga_fc=0&amp;u_tz=360&amp;u_his=7&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=4&amp;adx=59&amp;ady=2462&amp;biw=1348&amp;bih=955&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C44808397%2C31079964%2C31080650%2C44798934%2C95322745%2C95324580%2C31080932%2C95321958%2C95324154%2C95324161%2C95324262&amp;oid=2&amp;pvsid=4283359458820356&amp;tmod=495395500&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fzerodemy-books-bengali.blogspot.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1032%2C1365%2C955&amp;vis=1&amp;rsz=%7C%7CEebr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.41&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=6"
+                        data-google-container-id="a!3" data-load-complete="true"></iframe></div>
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+<div itemscope itemtype="https://schema.org/Book" itemid="{{ .Permalink }}">
+    <h1 itemprop="name">{{ .Params.Title }}</h1>
+    <h1 itemscope itemprop="author" itemtype="https://schema.org/Person"><span itemprop="name">{{ .Params.author }}</span></h1>
+    <h1 itemscope itemprop="publisher" itemtype="https://schema.org/Organization">{{ .Params.publisher }}</h1>
+    <h1 itemprop="numberOfPages"> {{ .Params.nop }}</h1>
+    <h1 itemprop="isbn"> {{ .Params.isbn }}</h1>
+    <h1 itemprop="inLanguage" content="{{ .Params.inlang}}">{{ .Params.inlang }}</h1>
+    <h1 itemprop="description">{{ .Content }}</h1>
+    <h1 itemprop="genre">{{ .Params.genre }}</h1>
+</div>
+
+        {{ if .IsTranslated }}
+        <h4>{{ i18n "translations" }}</h4>
+        <ul>
+            {{ range .Translations }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Lang }}: {{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+
+        {{ end }}

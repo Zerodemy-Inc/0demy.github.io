@@ -1,0 +1,119 @@
+{{ define "main" }}
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Book" itemid="{{ .Permalink }}" style="height: auto !important;">
+    <div class="bg-faded-info py-5">
+        <div class="py-5 container">
+            <h1 class="mb-3" itemprop="name">{{ .Title }}</h1>
+            <h3 class="mt-4 mb-1 text-body fw-light" itemscope itemprop="author" itemtype="https://schema.org/Person">
+                <span itemprop="name">{{ .Params.author }}</span>
+            </h3>
+            {{ partial "sharethis.html" . }}
+        </div>
+    </div>
+    <div class="container" style="height: auto !important;">
+        <div class="bg-light shadow-lg rounded-3" style="margin-top: -4.875rem;">
+            {{/* <div class="my-3 p-4 border-bottom" role="tablist">
+                <h1 itemprop="genre">{{ .Params.genre }}</h1>
+                ‣ <a href="https://zerodemy-books-bengali.blogspot.com/search/label/%40NCTB"><span
+                        class="at-author">@</span>NCTB
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%A6">২০১০
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%8F%E0%A6%A8%E0%A6%B8%E0%A6%BF%E0%A6%9F%E0%A6%BF%E0%A6%AC%E0%A6%BF">এনসিটিবি
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A6%BE%E0%A6%A0%E0%A7%8D%E0%A6%AF%E0%A6%AA%E0%A7%81%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%95">পাঠ্যপুস্তক
+                </a>
+
+                ‣ <a
+                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A5%E0%A6%AE">প্রথম
+                </a>
+            </div> */}}
+            <div class="px-4 pt-lg-3 pb-3 mb-5">
+                <div class="tab-content px-lg-3">
+                    <div class="row">
+                        <div class="post-body col-lg-7 pe-lg-0" itemprop="description">
+                            {{ if isset .Params "publisher" }}<img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;" src="{{ .Params.thumb }}">{{ end }}
+                            {{ .Content }}
+                        </div>
+                        <div class="col-lg-5 pt-4 pt-lg-0">
+                            <div class="ms-auto pb-3 infobox">
+                                <h3 class="h6">Infobox</h3>
+                                <ul class="list-unstyled fs-sm pb-2">
+                                    <li class="inf-item">
+                                        <span class="text-muted">Title:</span>
+                                        <span class="inf-title">{{ .Params.Title }}</span>
+                                    </li>
+                                    {{ if isset .Params "author" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">Author:</span>
+                                        <span class="inf-title">{{ .Params.author }}</span>
+                                    </li>
+                                    {{ end }}
+                                    {{ if isset .Params "publisher" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">Publisher:</span>
+                                        <span class="inf-title" itemscope itemprop="publisher"
+                                            itemtype="https://schema.org/Organization">{{ .Params.publisher }}</span>
+                                    </li>
+                                    {{ end }}
+                                    {{ if isset .Params "nop" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">Number Of Pages:</span>
+                                        <span class="inf-title" itemprop="numberOfPages"> {{ .Params.nop }}</span>
+                                    </li>
+                                    {{ end }}
+                                    {{ if isset .Params "isbn" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">ISBN:</span>
+                                        <span class="inf-title" itemprop="isbn"> {{ .Params.isbn }}</span>
+                                    </li>
+                                    {{ end }}
+                                    {{ if isset .Params "inlang" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">Language:</span>
+                                        <span itemprop="inLanguage" content="{{ .Params.inlang}}">{{ .Params.inlang }}</span>
+                                    </li>
+                                    {{ end }}
+
+                                </ul>
+                                <div class="mb-3 d-flex align-items-center">
+                                    Comment Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            {{ $related := .Site.RegularPages.Related . | first 5 }}
+            {{ with $related }}
+            <h3>See Also</h3>
+            <ul>
+                {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ if .IsTranslated }}
+<h4>{{ i18n "translations" }}</h4>
+<ul>
+    {{ range .Translations }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Lang }}: {{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ end }}

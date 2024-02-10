@@ -1,0 +1,93 @@
+{{ define "main" }}
+<div class="container">
+
+    {{/* */}}
+    <div class="row my-3">
+        {{ if gt (len .Sections) 0 }}
+        <div class="row pb-4">
+            <div class="col-12">
+                <div class="d-sm-flex justify-content-sm-between align-items-center border-bottom pb-3">
+                    <h1 class="mb-2 mb-sm-0 h2">নির্বাচিত শ্রেণিসমূহ</h1>
+                    <a class="btn btn-sm btn-primary mb-sm-3" href="/categories.html">
+                        <i class="fas fa-plus me-2"></i>সমস্ত শ্রেণির তালিকা দেখুন
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ range .Sections }}
+        <div class="col-md-6 col-xl-3">
+            <div class="card card-body bg-faded-info bg-opacity-10 p-4 h-100">
+                <h2 class="fs-1 text-success">
+                    <a class="cat" href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    {{/* */}}
+    {{ if gt (len .RegularPages) 0 }} {{ partial "title" . }}
+    {{ .Content }}
+    {{end}}
+    
+    <ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
+        {{ range .RegularPages }}
+        <li class="book-item">
+            <div class="book-box overflow-hidden bg-white p-3 h-100">
+                <div class="book-box wrapper d-block position-relative h-100">
+                    <div class="book-thumb">
+                        <a class="d-block" href="{{ .Permalink }}">
+                            <img alt="Cover of the book {{ .Title }} written by {{ .Params.author }}"
+                                class="ml-auto mx-auto d-block" src="{{ .Params.thumb }}"
+                                style="width: 150px; height: 210px;">
+                        </a>
+                    </div>
+                    <div class="books-desc pt-3 text-center">
+                        <h4 class="book-name">{{ .Title }}</h4>
+                        <h4 class="book-name">{{ .Params.author }}</h4>
+                    </div>
+                    <a class="see-det" href="{{ .Permalink }}">
+                        <button class="btn see-det-btn btn-warning" type="button">Download Now!</button>
+                    </a>
+                </div>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+    
+
+    {{/*  {{ if gt (len .RegularPages) 0 }} {{ partial "title" . }}
+    {{ .Content }}
+    {{end}}
+    
+    <ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
+        {{ $currentSection := .Section }}
+        {{ range .Site.RegularPages }}
+            {{ if (and (ge (len .Section) (len $currentSection)) (eq (substr .Section 0 (len $currentSection)) $currentSection)) }}
+        <li class="book-item">
+            <div class="book-box overflow-hidden bg-white p-3 h-100">
+                <div class="book-box wrapper d-block position-relative h-100">
+                    <div class="book-thumb">
+                        <a class="d-block" href="{{ .Permalink }}">
+                            <img alt="Cover of the book {{ .Title }} written by {{ .Params.author }}"
+                                class="ml-auto mx-auto d-block" src="{{ .Params.thumb }}"
+                                style="width: 150px; height: 210px;">
+                        </a>
+                    </div>
+                    <div class="books-desc pt-3 text-center">
+                        <h4 class="book-name">{{ .Title }}</h4>
+                        <h4 class="book-name">{{ .Params.author }}</h4>
+                    </div>
+                    <a class="see-det" href="{{ .Permalink }}">
+                        <button class="btn see-det-btn btn-warning" type="button">Download Now!</button>
+                    </a>
+                </div>
+            </div>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>  */}}
+
+</div>
+{{ end }}
