@@ -1,6 +1,6 @@
-<header class="zero-header shadow-sm">
-    <div class="zero-navbar navbar-sticky bg-light">
-        <div class="zero-navbar-top navbar navbar-expand-lg navbar-light">
+<header class="shadow-sm">
+    <div class="navbar-sticky bg-light">
+        <div class="navbar navbar-expand-lg navbar-light">
             <div class="zero-navbar-conatiner container">
                 <!--Zerodemy Logo Section-->
                 <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="{{ .Site.BaseURL | relLangURL }}">
@@ -28,10 +28,10 @@
                 </form>
             </div>
         </div>
-        <div class="zero-navbar-bottom navbar navbar-expand-lg navbar-light mt-n2 pt-0 pb-2">
+        <div class="navbar navbar-expand-lg navbar-light mt-n2 pt-0 pb-2">
             <div class="container">
-                <div class="b-section-navbar navbar-collapse collapse section" id="navbarCollapse">
-                    <div class="navbar-nav navbar-mega-nav pe-lg-2 me-lg-2">
+                <div class="navbar-collapse collapse section" id="navbarCollapse">
+                    {{/*  <div class="navbar-nav navbar-mega-nav pe-lg-2 me-lg-2">
                         <li class="nav-item dropdown">
                             <a aria-expanded="false" class="nav-link dropdown-toggle ps-lg-0"
                                 data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#">বিষয়ভিত্তিক বই</a>
@@ -169,18 +169,27 @@
                                 </li>
                             </ul>
                         </li>
-                    </div>
+                    </div>  */}}
                     <ul id="nav" class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/posts">Posts</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
-                                data-bs-toggle="dropdown">একাডেমিক</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Books</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="#" class="dropdown-item">প্রাথমিক</a></li>
-                                <li class="nav-item"><a href="#" class="dropdown-item">মাধ্যমিক</a></li>
-                                <li class="nav-item"><a href="#" class="dropdown-item">উচ্চমাধ্যমিক</a></li>
+                                <li class="nav-item"><a href="/books/textbooks" class="dropdown-item">TextBooks</a></li>
+                                <li class="nav-item"><a href="/books/notebooks" class="dropdown-item">NoteBooks</a></li>
+                                <li class="nav-item"><a href="/books" class="dropdown-item">All Books</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">TextBooks</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="/books/textbooks/c1" class="dropdown-item">Class One</a></li>
+                                <li class="nav-item"><a href="/books/textbooks/c2" class="dropdown-item">Class Two</a></li>
+                                <li class="nav-item"><a href="/books/textbooks/c3" class="dropdown-item">Class Three</a></li>
+                                <li class="nav-item"><a href="/books/textbooks" class="dropdown-item">All TextBooks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/lists">Lists</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/lists">Lists</a></li>
                     </ul>
                 </div>
             </div>

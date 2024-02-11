@@ -1,10 +1,11 @@
-baseURL = "https://example.com"
+baseURL = "https://zerodemy.com"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "Zerodemy Books"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
+paginate = 5
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
@@ -20,6 +21,7 @@ disableReadmoreNav = false # set true to hide prev/next navigation, default is f
 highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 menushortcutsnewtab = true # set true to open shortcuts links to a new tab/window
 subtitle = "Collection of Bengali Books"
+siteURL = "https://zerodemy.com"
 
 [markup]
   [markup.goldmark]

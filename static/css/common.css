@@ -1,0 +1,379 @@
+:root {
+    --zero-blue: #0d6efd;
+    --zero-indigo: #6610f2;
+    --zero-purple: #6f42c1;
+    --zero-pink: #d63384;
+    --zero-red: #dc3545;
+    --zero-orange: #fd7e14;
+    --zero-yellow: #ffc107;
+    --zero-green: #198754;
+    --zero-teal: #20c997;
+    --zero-cyan: #0dcaf0;
+    --zero-black: #000;
+    --zero-white: #fff;
+    --zero-gray: #7d879c;
+    --zero-gray-dark: #373f50;
+    --zero-gray-100: #f6f9fc;
+    --zero-gray-200: #f3f5f9;
+    --zero-gray-300: #e3e9ef;
+    --zero-gray-400: #dae1e7;
+    --zero-gray-500: #aeb4be;
+    --zero-gray-600: #7d879c;
+    --zero-gray-700: #4b566b;
+    --zero-gray-800: #373f50;
+    --zero-gray-900: #2b3445;
+    --zero-primary: #fe696a;
+    --zero-accent: #4e54c8;
+    --zero-secondary: #f3f5f9;
+    --zero-success: #42d697;
+    --zero-info: #69b3fe;
+    --zero-warning: #fea569;
+    --zero-danger: #f34770;
+    --zero-light: #fff;
+    --zero-dark: #373f50;
+    --zero-primary-rgb: 254, 105, 106;
+    --zero-accent-rgb: 78, 84, 200;
+    --zero-secondary-rgb: 243, 245, 249;
+    --zero-success-rgb: 66, 214, 151;
+    --zero-info-rgb: 105, 179, 254;
+    --zero-warning-rgb: 254, 165, 105;
+    --zero-danger-rgb: 243, 71, 112;
+    --zero-light-rgb: 255, 255, 255;
+    --zero-dark-rgb: 55, 63, 80;
+    --zero-white-rgb: 255, 255, 255;
+    --zero-black-rgb: 0, 0, 0;
+    --zero-body-color-rgb: 75, 86, 107;
+    --zero-body-bg-rgb: 255, 255, 255;
+    --zero-font-sans-serif: "Rubik", sans-serif;
+    --zero-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --zero-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --zero-body-font-family: var(--zero-font-sans-serif);
+    --zero-body-font-size: 1rem;
+    --zero-body-font-weight: 400;
+    --zero-body-line-height: 1.5;
+    --zero-body-color: #4b566b;
+    --zero-body-bg: #fff;
+    --zero-border-width: 1px;
+    --zero-border-style: solid;
+    --zero-border-color: #e3e9ef;
+    --zero-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --zero-border-radius: 0.3125rem;
+    --zero-border-radius-sm: 0.25rem;
+    --zero-border-radius-lg: 0.4375rem;
+    --zero-border-radius-xl: 1rem;
+    --zero-border-radius-2xl: 2rem;
+    --zero-border-radius-pill: 50rem;
+    --zero-link-color: #fe696a;
+    --zero-link-hover-color: #fe3638;
+    --zero-code-color: #d63384;
+    --zero-highlight-bg: #fff3cd
+}
+
+body {
+    font-family: kalpurush;
+}
+
+* {
+    margin-block-end: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none
+}
+
+a:hover {
+    color: grey;
+    text-decoration: none
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+    color: inherit;
+    text-decoration: none
+}
+
+.bx-nav-link.active {
+    color: #161619;
+    font-weight: 500;
+    border-bottom: 1px solid #161619;
+}
+
+/* Admin */
+.blog-admin {
+    display: none;
+}
+
+.post-body img:nth-of-type(1) {
+    max-height: 550px;
+    display: block;
+    margin: auto;
+    margin-bottom: 55px;
+}
+
+/* Multiplte Items Books Grid Model 1 */
+/* Recent Books*/
+.book-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-right: 1px solid #eae8e4;
+    border-bottom: 1px solid #eae8e4;
+}
+
+/*SingleItem*/
+.post-body {
+    font-size: large;
+    line-height: 1.8;
+    font-family: system-ui;
+}
+
+.books-desc {
+    height: 144px;
+}
+
+.see-det-btn {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 50px;
+    background: whitesmoke;
+    color: black;
+    border: none;
+}
+
+/*জনপ&#2509;র&#2495;য়/ন&#2495;র&#2509;ব&#2494;চ&#2495;ত ল&#2503;খক (সচ&#2495;ত&#2509;র)*/
+.selcted-authors-with-image .groups-box {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.selcted-authors-with-image .groups-box .item-img {
+    position: relative;
+    border-radius: 4px;
+    z-index: 1;
+    height: 200px;
+}
+
+.selcted-authors-with-image .groups-box .item-img:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), transparent);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.selcted-authors-with-image .groups-box .item-img img {
+    border-radius: 4px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 575px) {
+    .selcted-authors-with-image .groups-box .item-img img {
+        width: 100%;
+    }
+}
+
+.selcted-authors-with-image .groups-box .item-content {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.selcted-authors-with-image .groups-box a {
+    color: #ffffff;
+}
+
+.selcted-authors-with-image .groups-box a:hover {
+    color: #5edfff;
+}
+
+.selcted-authors-with-image .groups-box .item-content .groups-member {
+    font-size: 13px;
+    font-weight: 700;
+    background-color: #615dfa;
+    color: #ffffff;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 0 14px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.selcted-authors-with-image .groups-box:hover .item-img img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.selcted-authors-with-image .groups-box:hover .item-content {
+    top: 50%;
+}
+
+.selcted-authors-with-image .groups-box:hover .item-content .groups-member {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.selcted-authors-with-image .see-all-btn {
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+/*Cats 2*/
+.category-product-img img {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.category-product-img {
+    border-radius: 15px;
+    display: block;
+    overflow: hidden;
+}
+
+a.product-cat-link.p-2 {
+    display: block;
+    position: relative;
+}
+
+.product-cat-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+.category-product-img:hover img {
+    transform: scale(1.1);
+}
+
+#infobox {
+    margin-bottom: 80px;
+}
+
+.inf-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    padding-bottom: 3px;
+    color: grey;
+    border-bottom: 1px solid darkgrey;
+}
+
+.inf-item>span {
+    color: #9c27b0;
+    max-width: 60%;
+    text-align: right;
+}
+
+.load_in {
+    text-align: center;
+    padding: 60px;
+    opacity: 0.5;
+}
+
+.book-thumb img {
+    width: 150px;
+    height: 210px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+h3.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Related Books */
+.related .book-item {
+    border: none;
+}
+
+.related .book-item:nth-child(even) {
+    background: rgba(88, 81, 219, .08);
+}
+
+.related .book-item:nth-child(even) .see-det-btn {
+    background: rgb(156 39 176 / 46%);
+}
+
+.book-item:nth-child(odd) {
+    background: rgba(29, 161, 242, .08);
+}
+
+.book-item:nth-child(odd) .see-det-btn {
+    background: rgb(33 150 243 / 45%);
+}
+
+h4.book-name {
+    margin: 10px 0;
+    font-size: 110%;
+    font-weight: 600;
+    height: 62px;
+    overflow: hidden;
+}
+
+.book-basic-info.mb-3 {
+    margin: 2px 0 2px 0;
+    font-size: 80%;
+    padding-left: 15px;
+    overflow-x: hidden;
+}
+
+a.see-det {
+    margin: 2px 0 2px 0;
+    font-size: 80%;
+    padding-left: 15px;
+}

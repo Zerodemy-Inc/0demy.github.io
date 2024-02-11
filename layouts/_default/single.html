@@ -1,49 +1,37 @@
 {{ define "main" }}
-
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Book" itemid="{{ .Permalink }}" style="height: auto !important;">
     <div class="bg-faded-info py-5">
         <div class="py-5 container">
             <h1 class="mb-3" itemprop="name">{{ .Title }}</h1>
+            {{ if isset .Params "author" }}
             <h3 class="mt-4 mb-1 text-body fw-light" itemscope itemprop="author" itemtype="https://schema.org/Person">
                 <span itemprop="name">{{ .Params.author }}</span>
             </h3>
+            {{else if isset .Params "publisher" }}
+            <h3>{{ .Params.publisher }}</h3>
+            {{ end }}
+            {{ if isset .Params "ayear" }}<h6>{{ .Params.ayear }} শিক্ষাবর্ষ</h6>{{ end }}
             {{ partial "sharethis.html" . }}
         </div>
     </div>
     <div class="container" style="height: auto !important;">
         <div class="bg-light shadow-lg rounded-3" style="margin-top: -4.875rem;">
-            {{/* <div class="my-3 p-4 border-bottom" role="tablist">
-                <h1 itemprop="genre">{{ .Params.genre }}</h1>
-                ‣ <a href="https://zerodemy-books-bengali.blogspot.com/search/label/%40NCTB"><span
-                        class="at-author">@</span>NCTB
-                </a>
-
-                ‣ <a
-                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%A6">২০১০
-                </a>
-
-                ‣ <a
-                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%8F%E0%A6%A8%E0%A6%B8%E0%A6%BF%E0%A6%9F%E0%A6%BF%E0%A6%AC%E0%A6%BF">এনসিটিবি
-                </a>
-
-                ‣ <a
-                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A6%BE%E0%A6%A0%E0%A7%8D%E0%A6%AF%E0%A6%AA%E0%A7%81%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%95">পাঠ্যপুস্তক
-                </a>
-
-                ‣ <a
-                    href="https://zerodemy-books-bengali.blogspot.com/search/label/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A5%E0%A6%AE">প্রথম
-                </a>
-            </div> */}}
+            {{/*  <div class="my-3 p-4 border-bottom">
+                <span itemprop="genre">{{ .Params.genre }}</span>
+                Path>> {{ .File.Dir }}{{ .File.BaseFileName }}
+            </div>  */}}
             <div class="px-4 pt-lg-3 pb-3 mb-5">
-                <div class="tab-content px-lg-3">
+                <div class="px-lg-3  pt-4 ">
                     <div class="row">
-                        <div class="post-body col-lg-7 pe-lg-0" itemprop="description">
-                            {{ if isset .Params "publisher" }}<img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;" src="{{ .Params.thumb }}">{{ end }}
-                            {{ .Content }}
-                        </div>
-                        <div class="col-lg-5 pt-4 pt-lg-0">
-                            <div class="ms-auto pb-3 infobox">
+                        <div class="col-lg-3 pe-lg-0">
+                            <div class="infobox ms-auto pb-3">
                                 <h3 class="h6">Infobox</h3>
+                                {{ if isset .Params "thumb" }}
+                            <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
+                                src="{{ .Site.Params.siteURL }}/assets/img/books/{{ .Params.thumb }}">{{else}}
+                            <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
+                                src="{{ .Params.img }}">
+                            {{ end }}
                                 <ul class="list-unstyled fs-sm pb-2">
                                     <li class="inf-item">
                                         <span class="text-muted">Title:</span>
@@ -77,15 +65,19 @@
                                     {{ if isset .Params "inlang" }}
                                     <li class="inf-item">
                                         <span class="text-muted">Language:</span>
-                                        <span itemprop="inLanguage" content="{{ .Params.inlang}}">{{ .Params.inlang }}</span>
+                                        <span itemprop="inLanguage" content="{{ .Params.inlang}}">{{ .Params.inlang
+                                            }}</span>
                                     </li>
                                     {{ end }}
 
                                 </ul>
-                                <div class="mb-3 d-flex align-items-center">
-                                    Comment Here
-                                </div>
                             </div>
+                        </div>
+                        <div class="col-lg-7 pt-lg-0 ms-auto" itemprop="description" style="text-align: justify;">
+                            {{ .Content }}
+                        </div>
+                        <div class="col-12 mb-3 d-flex align-items-center">
+                            Comment Here
                         </div>
                     </div>
                 </div>
