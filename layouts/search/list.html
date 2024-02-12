@@ -1,13 +1,12 @@
 {{ define "main" }}
-
 <div class="container">
 	<div class="row">
 		<div class="col-lg-3 pe-lg-0">
 			<form>
 				<fieldset>
-					<legend>Disabled fieldset example</legend>
+					<legend>অনুসন্ধান করুন</legend>
 					<div class="mb-3">
-						<label for="search-select" class="form-label">Disabled select menu</label>
+						<label for="search-select" class="form-label">অনুসন্ধানের ধরন নির্বাচন করুন</label>
 						<select id="search-select" class="form-select">
 							<option value="title">Search by Title</option>
 							<option value="class">Search by Class</option>
@@ -18,31 +17,16 @@
 						</select>
 					</div>
 					<div class="mb-3">
-						<label for="search-input" class="form-label">Disabled input</label>
-						<input type="text" id="search-input" class="form-control" placeholder="Disabled input">
+						<label for="search-input" class="form-label">অনুসন্ধানের জন্য শব্দ লিখুন</label>
+						<input type="text" id="search-input" class="form-control">
 					</div>
 				</fieldset>
 			</form>
 		</div>
 		<div class="col-lg-8 pt-lg-0 ms-auto">
-			<ul id="search-results"
-		class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-	</ul>
-
+			<ul id="search-results" class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0"></ul>
 		</div>
 	</div>
-{{/* <h1>Search Example</h1>
-	<form>
-		<select id="search-select">
-			<option value="title">Search by Title</option>
-			<option value="class">Search by Class</option>
-			<option value="ayear">Search by Year</option>
-			<option value="author">Search by Author</option>
-			<option value="publisher">Search by Publisher</option>
-
-		</select>
-		<input type="text" id="search-input" placeholder="Enter search query...">
-	</form> */}}
 </div>
 <script>
 	$(document).ready(function () {

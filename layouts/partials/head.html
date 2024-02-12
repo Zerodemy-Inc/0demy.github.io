@@ -13,9 +13,9 @@
         {{ .Title}} {{.Params.class}} {{.Params.ayear}} শিক্ষাবর্ষ{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}
         {{- end -}}
     </title>
-    <link href="{{ .Site.BaseURL }}css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
     <script src="{{ .Site.BaseURL }}js/bootstrap.bundle.min.js"></script> 
     <!-- Only include the tracking when using `hugo` or adding `--environment production` -->
