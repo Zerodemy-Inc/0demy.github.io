@@ -1,7 +1,7 @@
 <header class="bg-light shadow-sm navbar-sticky">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand d-none d-sm-block me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
+            <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
                 {{ with .Site.Params.site_logo }}
                 <img src="{{ . }}" />
                 {{ end }}
@@ -11,10 +11,12 @@
                 </div>
             </a>
             <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button><a
-                    class="btn btn-primary btn-shadow" href="/search">Search</a>
-            </div>
+                <a class="ms-lg-4 ms-2" href="/search/"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a class="btn btn-sm btn-accent rounded-1 ms-lg-4 ms-2" href="/contact">Contact</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                 <hr class="my-3">
                 <!-- Primary menu-->
@@ -52,218 +54,3 @@
         </div>
     </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-{{/*
-<header class="shadow-sm">
-    <div class="navbar-sticky bg-light">
-        <div class="navbar navbar-expand-lg navbar-light">
-            <div class="zero-navbar-conatiner container">
-                <!--Zerodemy Logo Section-->
-                <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="{{ .Site.BaseURL | relLangURL }}">
-                    {{ with .Site.Params.site_logo }}
-                    <img src="{{ . }}" />
-                    {{ end }}
-                    <div class="navbar-tool-text ms-n3" style="display:block!important">
-                        <span>{{ .Site.Title }}</span><br>
-                        <span>{{ .Site.Params.subtitle }}</span>
-                    </div>
-                </a>
-                <!--Navigation Toogle : Mobile-->
-                <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
-                    <button aria-expanded="true" class="navbar-toggler" data-bs-target="#navbarCollapse"
-                        data-bs-toggle="collapse" type="button">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <!--Search Form-->
-                <form action="https://zerodemy-books-bengali.blogspot.com/search"
-                    class="zero-searchform input-group ms-lg-5 mb-md-0 my-2 flex-nowrap">
-                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                    <input autocomplete="off" class="search-input form-control rounded-start" name="q"
-                        placeholder="বই খুঁজুন" type="text" value="">
-                </form>
-            </div>
-        </div>
-        <div class="navbar navbar-expand-lg navbar-light mt-n2 pt-0 pb-2">
-            <div class="container">
-                <div class="navbar-collapse collapse section" id="navbarCollapse">
-                    <div class="navbar-nav navbar-mega-nav pe-lg-2 me-lg-2">
-                        <li class="nav-item dropdown">
-                            <a aria-expanded="false" class="nav-link dropdown-toggle ps-lg-0"
-                                data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#">বিষয়ভিত্তিক বই</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown mega-dropdown">
-                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                        href="search/label/">বাংলাদেশী লেখক</a>
-                                    <div class="dropdown-menu p-0">
-                                        <div class="d-flex flex-wrap flex-sm-nowrap px-2">
-                                            <div class="mega-dropdown-column pt-4 pb-0 py-sm-4 px-3">
-                                                <div class="widget widget-links">
-                                                    <ul class="widget-list">
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#হুমায়ুন আজাদ">হুমায়ুন আজাদ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">হুমায়ুন আহমেদ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#আবুল মনসুর আহমদ">আবুল মনসুর
-                                                                আহমদ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">আহমদ_ছফা</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">কাজী নজরুল ইসলাম</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">সুকুমার রায়</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">তসলিমা নাসরিন</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">জসীম উদ্দীন</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">জীবনানন্দ দাশ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">বেগম রোকেয়া</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">জাঝানারা ইমাম</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">মাইকেল মধুসূদন দত্ত</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">মীর মশাররফ হোসেন</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">প্রমথ চৌধুরী</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#">সুমন্ত আসলাম</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="mega-dropdown-column py-4 px-3">
-                                                <div class="widget widget-links">
-                                                    <ul class="widget-list">
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">আনিসুল_হক</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">আহসান_হাবীব</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">আল_মাহমুদ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">সৈয়দ শামসুল হক</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">ইমদাদুল হক মিলন</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">সৈয়দ মুজতবা আলী</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">সৈয়দ ওয়ালীউল্লাহ</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">মুনীর চৌধুরী</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">কাবেরী রায় চৌধুরী</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">তাহমিমা আনাম</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">প্রণব ভট্ট</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">জহির রায়হান</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="search/label/">আখতারুজ্জামান ইলিয়াস</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="mega-dropdown-column d-none d-lg-block py-4 text-center">
-                                                <a class="d-block mb-2" href="search/label/">
-                                                    <img alt="Computers and Accessories"
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                                </a>
-                                                <div class="fs-sm mb-3">সমস্ত বাংলাদেশী লেখকদের</div>
-                                                <a class="btn btn-primary btn-shadow btn-sm"
-                                                    href="/p/bangladeshi-authors.html">পূর্ণাঙ্গ তালিকা<i
-                                                        class="fa-sharp fa-solid fa-angle-right fs-xs ms-1"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown">
-                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                        href="search/label/">ভারতীয় লেখক</a>
-                                    <div class="dropdown-menu p-0">
-                                        <div class="d-flex flex-wrap flex-md-nowrap px-2">
-                                            <div class="mega-dropdown-column pt-4 pb-0 py-sm-4 px-3">
-                                                <div class="widget widget-links mb-3">
-                                                    <ul class="widget-list">
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#শরৎচন্দ্র%20চট্টোপাধ্যায়">শরৎচন্দ্র
-                                                                চট্টোপাধ্যায়</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#সুকুমারী%20ভট্টাচার্য">সুকুমারী
-                                                                ভট্টাচার্য</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="mega-dropdown-column py-4 px-3">
-                                                <div class="widget widget-links">
-                                                    <ul class="widget-list">
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#বঙ্কিমচন্দ্র%20চট্টোপাধ্যায়">বঙ্কিমচন্দ্র
-                                                                চট্টোপাধ্যায়</a></li>
-                                                        <li class="widget-list-item pb-1"><a class="widget-list-link"
-                                                                href="#রবীন্দ্রনাথ%20ঠাকুর">রবীন্দ্রনাথ
-                                                                ঠাকুর</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="mega-dropdown-column d-none d-lg-block py-4 text-center">
-                                                <a class="d-block mb-2" href="search/label/">
-                                                    <img alt="Smartphones and Tablets"
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png">
-                                                </a>
-                                                <div class="fs-sm mb-3">সমস্ত ভারতীয় বাঙালি লেখকদের</div>
-                                                <a class="btn btn-primary btn-shadow btn-sm"
-                                                    href="/p/indian-authors.html">পূর্ণাঙ্গ তালিকা<i
-                                                        class="fa-sharp fa-solid fa-angle-right fs-xs ms-1"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <ul id="nav" class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Books</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="/books/textbooks" class="dropdown-item">TextBooks</a></li>
-                                <li class="nav-item"><a href="/books/notebooks" class="dropdown-item">NoteBooks</a></li>
-                                <li class="nav-item"><a href="/books" class="dropdown-item">All Books</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">TextBooks</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="/books/textbooks/c1" class="dropdown-item">Class One</a>
-                                </li>
-                                <li class="nav-item"><a href="/books/textbooks/c2" class="dropdown-item">Class Two</a>
-                                </li>
-                                <li class="nav-item"><a href="/books/textbooks/c3" class="dropdown-item">Class Three</a>
-                                </li>
-                                <li class="nav-item"><a href="/books/textbooks" class="dropdown-item">All TextBooks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="/lists">Lists</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header> */}}

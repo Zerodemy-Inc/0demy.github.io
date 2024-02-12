@@ -1,0 +1,14 @@
+<h2 class="section-title">একই রকম অন্যান্য বই</h2>
+<ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
+    {{ $currentDir := path.Dir .File.Dir }}
+    {{ $maxPosts := 5 }}
+    {{ $count := 0 }}
+    {{ range .Site.RegularPages }}
+    {{ if and (eq (path.Dir .File.Dir) $currentDir) (ne .Permalink $.Permalink) }}
+    {{ if lt $count $maxPosts }}
+    {{ partial "booksingle.html" . }}
+    {{ $count = add $count 1 }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</ul>

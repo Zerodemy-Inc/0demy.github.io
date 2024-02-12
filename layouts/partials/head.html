@@ -6,16 +6,15 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <link rel="canonical" href="{{ .Permalink }}">
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' rel='stylesheet'/>
     <title>
         {{- block "title" . -}}
-        {{ .Title}} {{.Params.class}} {{.Params.ayear}} শিক্ষাবর্ষ{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}
+        {{ .Title}}{{if isset .Params "class"}} {{.Params.class}}{{ end }}{{if isset .Params "ayear"}} {{.Params.ayear}} শিক্ষাবর্ষ {{ end }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}
         {{- end -}}
     </title>
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/common.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
     <script src="{{ .Site.BaseURL }}js/bootstrap.bundle.min.js"></script> 
     <!-- Only include the tracking when using `hugo` or adding `--environment production` -->
