@@ -5,7 +5,7 @@ DefaultContentLanguage = "en"
 title = "Zerodemy Books"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
-paginate = 5
+paginate = 10
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
@@ -30,18 +30,3 @@ siteURL = "https://zerodemy.com"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
-
-[[menu.shortcuts]]
-name = "More from us"
-url = "https://vantage-design.com"
-weight = 1
-
-[[menu.shortcuts]]
-name = "<i class='fab fa-github'></i>"
-url = "https://github.com/vantagedesign/ace-documentation"
-weight = 2
-
-[[menu.shortcuts]]
-name = "<button class='btn btn-success mt-n1'>Download</button>"
-url = "https://github.com/vantagedesign/ace-documentation/releases"
-weight = 3

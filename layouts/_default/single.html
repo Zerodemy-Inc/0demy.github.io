@@ -1,5 +1,6 @@
 {{ define "main" }}
-<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Book" itemid="{{ .Permalink }}" style="height: auto !important;">
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Book" itemid="{{ .Permalink }}"
+    style="height: auto !important;">
     <div class="bg-faded-info py-5">
         <div class="py-5 container">
             <h1 class="mb-3" itemprop="name">{{ .Title }}</h1>
@@ -16,43 +17,48 @@
     </div>
     <div class="container" style="height: auto !important;">
         <div class="bg-light shadow-lg rounded-3" style="margin-top: -4.875rem;">
-            {{/*  <div class="my-3 p-4 border-bottom">
+            {{/* <div class="my-3 p-4 border-bottom">
                 <span itemprop="genre">{{ .Params.genre }}</span>
                 Path>> {{ .File.Dir }}{{ .File.BaseFileName }}
-            </div>  */}}
+            </div> */}}
             <div class="px-4 pt-lg-3 pb-3 mb-5">
                 <div class="px-lg-3  pt-4 ">
                     <div class="row">
                         <div class="col-lg-3 pe-lg-0">
                             <div class="infobox ms-auto pb-3">
-                                <h3 class="h6">Infobox</h3>
                                 {{ if isset .Params "thumb" }}
-                            <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
-                                src="{{ .Site.Params.siteURL }}/assets/img/books/{{ .Params.thumb }}">{{else}}
-                            <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
-                                src="{{ .Params.img }}">
-                            {{ end }}
+                                <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
+                                    src="{{ .Site.Params.siteURL }}/assets/img/books/{{ .Params.thumb }}">{{else}}
+                                <img style="max-height: 550px; display: block; margin: auto; margin-bottom: 55px;"
+                                    src="{{ .Params.img }}">
+                                {{ end }}
                                 <ul class="list-unstyled fs-sm pb-2">
                                     <li class="inf-item">
-                                        <span class="text-muted">Title:</span>
+                                        <span class="text-muted">শিরোনাম:</span>
                                         <span class="inf-title">{{ .Params.Title }}</span>
                                     </li>
                                     {{ if isset .Params "author" }}
                                     <li class="inf-item">
-                                        <span class="text-muted">Author:</span>
+                                        <span class="text-muted">রচয়িতা/লেখক:</span>
                                         <span class="inf-title">{{ .Params.author }}</span>
+                                    </li>
+                                    {{ end }}
+                                    {{ if isset .Params "inner" }}
+                                    <li class="inf-item">
+                                        <span class="text-muted">প্রচ্ছদ:</span>
+                                        <span class="inf-title">{{ .Params.inner }}</span>
                                     </li>
                                     {{ end }}
                                     {{ if isset .Params "publisher" }}
                                     <li class="inf-item">
-                                        <span class="text-muted">Publisher:</span>
+                                        <span class="text-muted">প্রকাশক/প্রকাশনী:</span>
                                         <span class="inf-title" itemscope itemprop="publisher"
                                             itemtype="https://schema.org/Organization">{{ .Params.publisher }}</span>
                                     </li>
                                     {{ end }}
                                     {{ if isset .Params "nop" }}
                                     <li class="inf-item">
-                                        <span class="text-muted">Number Of Pages:</span>
+                                        <span class="text-muted">পৃষ্ঠাসংখ্যা:</span>
                                         <span class="inf-title" itemprop="numberOfPages"> {{ .Params.nop }}</span>
                                     </li>
                                     {{ end }}
@@ -64,7 +70,7 @@
                                     {{ end }}
                                     {{ if isset .Params "inlang" }}
                                     <li class="inf-item">
-                                        <span class="text-muted">Language:</span>
+                                        <span class="text-muted">ভাষা:</span>
                                         <span itemprop="inLanguage" content="{{ .Params.inlang}}">{{ .Params.inlang
                                             }}</span>
                                     </li>
@@ -84,15 +90,36 @@
             </div>
         </div>
         <div class="col-lg-12">
-            {{ $related := .Site.RegularPages.Related . | first 5 }}
-            {{ with $related }}
-            <h3>See Also</h3>
-            <ul>
-                {{ range . }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
+            <h2>Related books</h2>
+            <ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
+                {{ $currentDir := path.Dir .File.Dir }}
+            {{ range .Site.RegularPages }}
+            {{ if and (eq (path.Dir .File.Dir) $currentDir) (ne .Permalink $.Permalink) }}
+            <li class="book-item">
+                <div class="overflow-hidden bg-white p-3 h-100">
+                    <div class="wrapper d-block position-relative h-100">
+                        <div class="book-thumb">
+                            <a class="d-block" href="{{ .Permalink }}">
+                                <img alt="Cover of the book {{ .Title }} written by {{ .Params.author }}"
+                                    class="ml-auto mx-auto d-block" src="{{ .Site.Params.siteURL }}/assets/img/books/{{ .Params.thumb }}"
+                                    style="width: 150px; height: 210px;">
+                            </a>
+                        </div>
+                        <div class="books-desc pt-3 text-center">
+                            <h4 class="book-name">{{ .Title }} -- {{ .Params.class }} </h4>
+                            <h5>{{ .Params.author }}</h5>
+                            <h6>{{ .Params.ayear }} শিক্ষাবর্ষ</h6>
+                        </div>
+                        <a class="see-det" href="{{ .Permalink }}">
+                            <button class="btn see-det-btn btn-warning" type="button">Download Now!</button>
+                        </a>
+                    </div>
+                </div>
+            </li>
             {{ end }}
+            {{ end }}
+            </ul>
+            
         </div>
     </div>
 </div>

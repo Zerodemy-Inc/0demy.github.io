@@ -1,0 +1,21 @@
+<li class="book-item">
+    <div class="overflow-hidden bg-white p-3 h-100">
+        <div class="wrapper d-block position-relative h-100">
+            <div class="book-thumb">
+                <a class="d-block" href="{{ .Permalink }}">
+                    <img alt="Cover of the book {{ .Title }} written by {{ .Params.author }}"
+                        class="ml-auto mx-auto d-block" src="{{ .Site.Params.siteURL }}/assets/img/books/{{ .Params.thumb }}"
+                        style="width: 150px; height: 210px;">
+                </a>
+            </div>
+            <div class="books-desc pt-3 text-center">
+                <h4 class="book-name">{{ .Title }} -- {{ .Params.class }} </h4>
+                <h5>{{ .Params.author }}</h5>
+                <h6>{{ .Params.ayear }} শিক্ষাবর্ষ</h6>
+            </div>
+            <a class="see-det" href="{{ .Permalink }}">
+                <button class="btn see-det-btn btn-warning" type="button">Download Now!</button>
+            </a>
+        </div>
+    </div>
+</li>

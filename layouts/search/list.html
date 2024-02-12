@@ -1,0 +1,117 @@
+{{ define "main" }}
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 pe-lg-0">
+			<form>
+				<fieldset>
+					<legend>Disabled fieldset example</legend>
+					<div class="mb-3">
+						<label for="search-select" class="form-label">Disabled select menu</label>
+						<select id="search-select" class="form-select">
+							<option value="title">Search by Title</option>
+							<option value="class">Search by Class</option>
+							<option value="ayear">Search by Year</option>
+							<option value="author">Search by Author</option>
+							<option value="publisher">Search by Publisher</option>
+							{{/* <option value="content">Search by Content</option> */}}
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="search-input" class="form-label">Disabled input</label>
+						<input type="text" id="search-input" class="form-control" placeholder="Disabled input">
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="col-lg-8 pt-lg-0 ms-auto">
+			<ul id="search-results"
+		class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
+	</ul>
+
+		</div>
+	</div>
+{{/* <h1>Search Example</h1>
+	<form>
+		<select id="search-select">
+			<option value="title">Search by Title</option>
+			<option value="class">Search by Class</option>
+			<option value="ayear">Search by Year</option>
+			<option value="author">Search by Author</option>
+			<option value="publisher">Search by Publisher</option>
+
+		</select>
+		<input type="text" id="search-input" placeholder="Enter search query...">
+	</form> */}}
+</div>
+<script>
+	$(document).ready(function () {
+		const input = $("#search-input");
+		const select = $("#search-select");
+		const results = $("#search-results");
+
+		let pages;
+
+		// Load the index.json file
+		$.getJSON("/index.json", function (data) {
+			pages = data;
+		});
+
+		// Event listener for input changes
+		input.on("input", function () {
+			searchPages();
+		});
+
+		// Event listener for select changes
+		select.on("change", function () {
+			searchPages();
+		});
+
+		// Function to search pages based on selected parameter
+		function searchPages() {
+			const query = input.val().toLowerCase().trim();
+			const selectedParam = select.val();
+
+			// Clear previous search results
+			results.empty();
+
+			if (query !== "") {
+				// Filter pages based on the selected parameter
+				const filteredPages = pages.filter(function (page) {
+					const value = page[selectedParam];
+					return value && typeof value === 'string' && value.toLowerCase().includes(query);
+				});
+
+				// Display search results
+				filteredPages.forEach(function (page) {
+					const listItem = $("<li>").addClass("book-item");
+					const innerDiv = $("<div>").addClass("overflow-hidden bg-white p-3 h-100");
+					const wrapperDiv = $("<div>").addClass("wrapper d-block position-relative h-100");
+					const bookThumbDiv = $("<div>").addClass("book-thumb");
+					const bookLink = $("<a>").addClass("d-block").attr("href", page.url);
+					{{/*  const bookImage = $("<img>").addClass("ml-auto mx-auto d-block")
+						.attr("src", page.thumb) // Assuming page.thumb exists
+						.attr("alt", "Cover of the book " + page.title + " written by " + page.author)
+						.css({ "width": "150px", "height": "210px" });  */}}
+					const booksDescDiv = $("<div>").addClass("books-desc pt-3 text-center");
+					const bookNameH4 = $("<h4>").addClass("book-name").text(page.title + " -- " + page.class);
+					const authorH5 = $("<h5>").text(page.author);
+					const ayearH6 = $("<h6>").text(page.ayear + " শিক্ষাবর্ষ");
+					const seeDetLink = $("<a>").addClass("see-det").attr("href", page.url);
+					const downloadBtn = $("<button>").addClass("btn see-det-btn btn-warning")
+						.attr("type", "button").text("Download Now!");
+
+					{{/*  bookLink.append(bookImage);  */}}
+					bookThumbDiv.append(bookLink);
+					booksDescDiv.append(bookNameH4, authorH5, ayearH6);
+					seeDetLink.append(downloadBtn);
+					wrapperDiv.append(bookThumbDiv, booksDescDiv, seeDetLink);
+					innerDiv.append(wrapperDiv);
+					listItem.append(innerDiv);
+					results.append(listItem);
+				});
+			}
+		}
+	});
+</script>
+{{ end}}

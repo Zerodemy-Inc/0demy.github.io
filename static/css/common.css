@@ -128,9 +128,6 @@ a:not([href]):not([class]):hover {
     font-family: system-ui;
 }
 
-.books-desc {
-    height: 144px;
-}
 
 .see-det-btn {
     display: block;
@@ -361,7 +358,6 @@ h4.book-name {
     margin: 10px 0;
     font-size: 110%;
     font-weight: 600;
-    height: 62px;
     overflow: hidden;
 }
 
