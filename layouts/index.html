@@ -1,38 +1,8 @@
 {{ define "main" }}
 
 <div class="container">
-	{{if .Site.Home }}
-	{{ partial "hero.html" . }}
-	{{ end }}
-	{{if .Site.Home.Content }}
-	<section class="mt-5">
-		<h2>সকল বই</h2>
-		<ul
-			class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-			{{ range .Paginator.Pages }}
-			{{ partial "booksingle.html" . }}
-			{{ end }}
-		</ul>
-		<div>{{ template "_internal/pagination.html" . }}</div>
-	</section> 
-	<section class="mt-5">
-		<h2>পাঠ্যবই (বাংলাদেশ)</h2>
-		<ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-			{{ range where .Site.RegularPages "Section" "textbooks" | first 10 }}
-			{{ partial "booksingle.html" . }}
-			{{ end }}
-		</ul>
-	</section>
-	<section class="mt-5">
-		<h2>পাঠ্যবই (পশ্চিমবঙ্গ)</h2>
-		<ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-			{{ range (site.GetPage "textbooks/c1").RegularPages | first 5}}
-			{{ partial "booksingle.html" . }}
-		{{ end }}
-		</ul>
-	</section>
-	{{else}}
-	No HomePage
+	<div class="mt-5">
+	<a href="https://books.zerodemy.com">Books</a>
+	</div>
 </div>
-{{ end }}
 {{ end }}
