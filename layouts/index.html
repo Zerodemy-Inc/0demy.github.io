@@ -5,28 +5,28 @@
 	{{ partial "hero.html" . }}
 	{{ end }}
 	{{if .Site.Home.Content }}
-	<section>
-		<h2>All Books</h2>
+	<section class="mt-5">
+		<h2>সকল বই</h2>
 		<ul
 			class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
 			{{ range .Paginator.Pages }}
 			{{ partial "booksingle.html" . }}
 			{{ end }}
 		</ul>
-		{{ template "_internal/pagination.html" . }}
+		<div>{{ template "_internal/pagination.html" . }}</div>
 	</section> 
-	<section>
-		<h2>TextBooks</h2>
+	<section class="mt-5">
+		<h2>পাঠ্যবই (বাংলাদেশ)</h2>
 		<ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-			{{ range where .Site.RegularPages "Section" "books" | first 5 }}
+			{{ range where .Site.RegularPages "Section" "textbooks" | first 10 }}
 			{{ partial "booksingle.html" . }}
 			{{ end }}
 		</ul>
 	</section>
-	<section>
-		<h2>Class One Books</h2>
+	<section class="mt-5">
+		<h2>পাঠ্যবই (পশ্চিমবঙ্গ)</h2>
 		<ul class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0">
-			{{ range (site.GetPage "books/textbooks/c1").RegularPages | first 5}}
+			{{ range (site.GetPage "textbooks/c1").RegularPages | first 5}}
 			{{ partial "booksingle.html" . }}
 		{{ end }}
 		</ul>

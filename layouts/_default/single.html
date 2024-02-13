@@ -95,8 +95,8 @@
         </div>
         <div class="col-lg-12">
             <div class="mx-auto pt-5" style="max-width: 300px;">
-                {{ if isset .Params "dl"}}
-                <a class="btn btn-lg btn-accent d-block w-100 mb-4" href="#">ডাউনলোড করুন!</a>
+                {{ if isset .Params "dlink"}}
+                <a class="btn btn-lg btn-accent d-block w-100 mb-4" href="{{ .Params.dlink }}">ডাউনলোড করুন!</a>
                 {{ end }}
             </div>
         </div>

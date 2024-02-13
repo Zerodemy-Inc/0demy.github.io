@@ -28,7 +28,7 @@
         {{ partial "booksingle.html" . }}
         {{ end }}
     </ul>
-    {{ template "_internal/pagination.html" . }}
+    <div class="pagination">{{ template "_internal/pagination.html" . }}</div>
 
     {{/*  {{ if gt (len .RegularPages) 0 }} {{ partial "title" . }}
     {{ .Content }}
