@@ -3,66 +3,26 @@
         <div class="container">
             <a class="navbar-brand me-4 order-lg-1" href="{{ .Site.BaseURL | relLangURL }}">
                 {{ with .Site.Params.site_logo }}
-                <img src="{{ . }}" />
+                <img class="d-md-none" width="30" src="{{ . }}" alt="Zerodemy Books Logo"/>
                 {{ end }}
-                <div class="navbar-tool-text ms-n3" style="display:block!important">
-                    <span>{{ .Site.Title }}</span><br>
-                    <span>{{ .Site.Params.subtitle }}</span>
+                <div class="navbar-tool-text ms-n3 d-none d-md-block">
+                    <span class="fw-bold">{{ .Site.Params.title_bn }}</span><br>
+                    <span>{{ .Site.Params.subtitle_bn }}</span>
                 </div>
             </a>
             <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-                <a class="ms-lg-4 ms-2" href="/search/"><i class="bi bi-search"></i></a>
-                <a class="btn btn-sm btn-accent rounded-1 ms-lg-4 ms-2" href="/contact">Contact</a>
+                <a class="btn btn-sm btn-accent" href="{{ .Site.BaseURL }}search/"><i class="bi bi-search"></i></a>
+                <a class="btn btn-sm btn-accent ms-2" href="{{ .Site.BaseURL }}contact">যোগাযোগ</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
               </div>
             <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
                 <hr class="my-3">
-                <!-- Primary menu-->
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">পাঠ্যবই</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">প্রাথমিক</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/textbooks/c1">১ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c2">২য় শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c3">৩য় শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c4">৪র্থ শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c5">৫ম শ্রেণি</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">মাধ্যমিক</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/textbooks/c6">৬ষ্ঠ শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c7">৭ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c8">৮ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c9">৯ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c10">১০ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c9-10">৯ম - ১০ম শ্রেণি</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/textbooks">সবগুলো একসঙ্গে</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">নোটবই</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">প্রাথমিক</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/textbooks/c1">১ম শ্রেণি</a></li>
-                                    <li><a class="dropdown-item" href="/textbooks/c2">২য় শ্রেণি</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/textbooks">সবগুলো একসঙ্গে</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="#">গীতিকার</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="#">সুরকার</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="#">শিরোনাম</a></li>
                 </ul>
             </div>
         </div>

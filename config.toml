@@ -1,32 +1,27 @@
-baseURL = "https://zerodemy.com"
-
-languageCode = "en-us"
-DefaultContentLanguage = "en"
-title = "Zerodemy Books"
-pygmentsCodeFences = true
-pygmentsStyle = "monokailight"
-paginate = 10
-
-defaultContentLanguage = "en"
+baseURL = "https://zerodemy.com/"
+title = "Zerodemy"
+languageCode = "bn-BD"
+DefaultContentLanguage = "bn"
+defaultContentLanguage = "bn"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
+
+paginate = 10
 
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 
 [params]
-ordersectionsby = "weight" # ordersectionsby = "title"
-disableSearch = false # default is false
-disableReadmoreNav = false # set true to hide prev/next navigation, default is false
-highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
-menushortcutsnewtab = true # set true to open shortcuts links to a new tab/window
-subtitle = "Collection of Bengali Books"
-siteURL = "https://zerodemy.com"
+subtitle = ""
+subtitle_bn = ""
+title_bn = "জিরোডেমি"
+site_logo = "https://books.zerodemy.com/images/logo temporary.png"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      hardWraps = true
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

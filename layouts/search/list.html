@@ -1,31 +1,35 @@
 {{ define "main" }}
-<div class="container">
-	<div class="row mt-5">
-		<div class="col-lg-3 pe-lg-0">
-			<form>
-				<fieldset>
-					<legend>অনুসন্ধান করুন</legend>
-					<div class="mb-3">
-						<label for="search-select" class="form-label">অনুসন্ধানের ধরন নির্বাচন করুন</label>
-						<select id="search-select" class="form-select">
-							<option value="title">Search by Title</option>
-							<option value="class">Search by Class</option>
-							<option value="ayear">Search by Year</option>
-							<option value="author">Search by Author</option>
-							<option value="publisher">Search by Publisher</option>
-							{{/* <option value="content">Search by Content</option> */}}
-						</select>
-					</div>
-					<div class="mb-3">
-						<label for="search-input" class="form-label">অনুসন্ধানের জন্য শব্দ লিখুন</label>
-						<input type="text" id="search-input" class="form-control">
-					</div>
-				</fieldset>
-			</form>
+<div class="bg-accent pt-4 pb-5">
+	<div class="container pt-2 pb-3 pt-lg-3 pb-lg-4">
+		<h1 class="h3 text-light mb-0">{{ .Title }}</h1>
+	</div>
+</div>
+<div class="container pb-5 mb-2 mb-md-4">
+	<!-- Toolbar-->
+	<div class="bg-light shadow-lg rounded-3 p-4 mt-n5 mb-4">
+		<div class="row gy-3 gx-4 justify-content-between">
+			<div class="col-lg-3 col-md-4 col-sm-7 col-12">
+				<div class="d-flex align-items-center flex-shrink-0">
+					<label for="search-select"
+						class="form-label mb-0 me-2 pe-1 fw-normal text-nowrap d-sm-block d-none">অনুসন্ধানের
+						ধরন:</label>
+					<select id="search-select" class="form-select">
+						<option value="title">গানের শিরোনাম</option>
+						<option value="lyric">গীতকার অনুযায়ী</option>
+						<option value="composer">সুরকার অনুযায়ী</option>
+						<option value="content">যেকোনো লাইন/শব্দ অনুযায়ী</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md col-12">
+				<div class="input-group">
+					<input id="search-input" class="form-control pe-5 rounded" type="text" placeholder="লিখুন...">
+				</div>
+			</div>
+
 		</div>
-		<div class="col-lg-8 pt-lg-0 ms-auto">
-			<ul id="search-results" class="books-list list-unstyled row row-cols-2 no-gutters row-cols-md-3 row-cols-lg-5 row-cols-wd-6 border-top border-left my-0"></ul>
-		</div>
+	</div>
+	<div id="search-results" class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-sm-4 gy-3 pt-sm-3">
 	</div>
 </div>
 <script>
@@ -33,69 +37,60 @@
 		const input = $("#search-input");
 		const select = $("#search-select");
 		const results = $("#search-results");
-
+	
 		let pages;
-
+	
 		// Load the index.json file
 		$.getJSON("/index.json", function (data) {
 			pages = data;
+			// Call searchPages after loading data
+			searchPages();
 		});
-
+	
 		// Event listener for input changes
 		input.on("input", function () {
 			searchPages();
 		});
-
+	
 		// Event listener for select changes
 		select.on("change", function () {
 			searchPages();
 		});
-
+	
 		// Function to search pages based on selected parameter
 		function searchPages() {
 			const query = input.val().toLowerCase().trim();
 			const selectedParam = select.val();
-
+	
 			// Clear previous search results
 			results.empty();
-
+	
 			if (query !== "") {
 				// Filter pages based on the selected parameter
 				const filteredPages = pages.filter(function (page) {
 					const value = page[selectedParam];
 					return value && typeof value === 'string' && value.toLowerCase().includes(query);
 				});
-
 				// Display search results
 				filteredPages.forEach(function (page) {
-					const listItem = $("<li>").addClass("book-item");
-					const innerDiv = $("<div>").addClass("overflow-hidden bg-white p-3 h-100");
-					const wrapperDiv = $("<div>").addClass("wrapper d-block position-relative h-100");
-					const bookThumbDiv = $("<div>").addClass("book-thumb");
-					const bookLink = $("<a>").addClass("d-block").attr("href", page.url);
-					{{/*  const bookImage = $("<img>").addClass("ml-auto mx-auto d-block")
-						.attr("src", page.thumb) // Assuming page.thumb exists
-						.attr("alt", "Cover of the book " + page.title + " written by " + page.author)
-						.css({ "width": "150px", "height": "210px" });  */}}
-					const booksDescDiv = $("<div>").addClass("books-desc pt-3 text-center");
-					const bookNameH4 = $("<h4>").addClass("book-name").text(page.title + " -- " + page.class);
-					const authorH5 = $("<h5>").text(page.author);
-					const ayearH6 = $("<h6>").text(page.ayear + " শিক্ষাবর্ষ");
-					const seeDetLink = $("<a>").addClass("see-det").attr("href", page.url);
-					const downloadBtn = $("<button>").addClass("btn see-det-btn btn-warning")
-						.attr("type", "button").text("Download Now!");
-
-					{{/*  bookLink.append(bookImage);  */}}
-					bookThumbDiv.append(bookLink);
-					booksDescDiv.append(bookNameH4, authorH5, ayearH6);
-					seeDetLink.append(downloadBtn);
-					wrapperDiv.append(bookThumbDiv, booksDescDiv, seeDetLink);
-					innerDiv.append(wrapperDiv);
-					listItem.append(innerDiv);
-					results.append(listItem);
+					const lineBreak = document.createElement("br");
+					const divColMb2 = $("<div>").addClass("col mb-2");
+					const divCardh100 = $("<div>").addClass("card h-100 border-0 shadow");
+					const divCardBody = $("<div>").addClass("card-body");
+					const workTitleLink = $("<a>").addClass("d-block").attr("href", page.url);
+					const workTitle = $("<h4>").addClass("product-title mb-2").text(page.title);
+					const gitkar = $("<span>").addClass("product-title mb-2 fs-base").text("গীতিকার: " + page.lyric);
+					const gayok = $("<span>").addClass("product-title mb-2 fs-base").text("গায়ক: " + page.singer);
+					// const band = $("<span>").addClass("product-title mb-2 fs-base").text("ব্যান্ড: " + page.band);
+					workTitleLink.append(workTitle, lineBreak, gitkar, lineBreak, gayok);
+					divCardBody.append(workTitleLink);
+					divCardh100.append(divCardBody);
+					divColMb2.append(divCardh100);
+					results.append(divColMb2);
 				});
 			}
 		}
 	});
+	
 </script>
 {{ end}}

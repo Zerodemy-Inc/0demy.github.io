@@ -1,8 +1,56 @@
 {{ define "main" }}
+{{if .Site.Home.Content }}
+<style>
+	#s1 {
+		background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20191106/pngtree-back-to-school-rectangular-blackboard-education-book-pen-holder-image_321417.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 
-<div class="container">
-	<div class="mt-5">
-	<a href="https://books.zerodemy.com">Books</a>
+	#s2 {
+		background-image: url(https://cartzilla.createx.studio/img/home/mono-product/hero-bg.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#s3 {
+		background-image: url(https://www.psychologicalscience.org/redesign/wp-content/uploads/2014/07/PAFF_101317_sleeplanguageskills-609x419.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+<section id="s1" class="bg-position-top-center bg-repeat-0 pt-5 pb-5 py-md-10">
+	<div class="container pt-4 mb-3 mb-lg-0">
+		<div class="row">
+			<div class="col-lg-5 col-md-6 col-sm-8 offset-lg-1">
+				<h5 class="text-light fw-normal">জিরোডেমি বই</h5>
+				<h1 class="text-light mb-5">বাংলা বইয়ের উন্মুক্ত সংগ্রহশালা</h1>
+				<a class="btn btn-primary me-grid-gutter" href="https://books.zerodemy.com/">বইয়ের জগতে ভ্রমণ করুন</a>
+			</div>
+		</div>
 	</div>
-</div>
+</section>
+<section id="s2" class="bg-position-top-center bg-repeat-0 pt-5 pb-5 py-md-10">
+	<div class="container pt-4 mb-3 mb-lg-0">
+		<div class="row">
+			<div class="col-lg-5 col-md-6 col-sm-8 offset-lg-1">
+				<h5 class="fw-normal">জিরোডেমি লিরিক্স</h5>
+				<h1 class="mb-5">বাংলা লিরিক্সের উন্মুক্ত সংগ্রহশালা</h1>
+				<a class="btn btn-primary me-grid-gutter" href="https://zerodemy.com/lyrics/">বইয়ের জগতে ভ্রমণ করুন</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="s3" class="bg-position-top-center bg-repeat-0 pt-5 pb-5 py-md-10">
+	<div class="container pt-4 mb-3 mb-lg-0">
+		<div class="row">
+			<div class="col-lg-5 col-md-6 col-sm-8 offset-lg-1">
+				<h5 class="fw-normal">জিরোডেমি লিরিক্স</h5>
+				<h1 class="mb-5">বাংলা লিরিক্সের উন্মুক্ত সংগ্রহশালা</h1>
+				<a class="btn btn-primary me-grid-gutter" href="https://zerodemy.com/lyrics/">বইয়ের জগতে ভ্রমণ করুন</a>
+			</div>
+		</div>
+	</div>
+</section>
+{{else}} No HomePage
+{{ end }}
 {{ end }}
